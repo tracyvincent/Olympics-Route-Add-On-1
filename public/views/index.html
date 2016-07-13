@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="olympicApp">
+  <head>
+    <meta charset="utf-8">
+    <title>olympic athletes</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="vendors/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <base href="/" />
+  </head>
+  <body>
+    <header>
+      <h1>Olympic Athletes</h1>
+    </header>
+    <div class="buttonholder">
+      <a href="/archery"><button>Archery</button></a>
+      <a href="/basketball"><button>Basketball</button></a>
+      <a href="/taekwondo"><button>Taekwondo</button></a>
+      <a href="/pingpong"><button>Table Tennis</button></a>
+      <a href="/pentathalon"><button>Pentathalon</button></a>
+    </div>
+    <div class="wrapper">
+      <div ng-view>
+      </div>
+    </div>
+  </body>
+</html>
