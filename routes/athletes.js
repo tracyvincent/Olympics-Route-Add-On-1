@@ -32,24 +32,40 @@ function randomInt(min,max)
 {
     return Math.floor(Math.random()*(max-min)+min);
 }
-router.get('/archery', function(request, response){
-  var archer= archery[randomInt(0, archery.length)];
-  response.send(archer);
-});
-router.get('/basketball', function(request, response){
-  var bballplayer= basketball[randomInt(0, basketball.length)];
-  response.send(bballplayer);
-});
-router.get('/taekwondo', function(request, response){
-  var taek= taekwondo[randomInt(0, taekwondo.length)];
-  response.send(taek);
-});
-router.get('/tableTennis', function(request, response){
-  var pingPongPlaya= tableTennis[randomInt(0, tableTennis.length)];
-  response.send(pingPongPlaya);
-});
-router.get('/pentathlon', function(request, response){
+// router.get('/archery', function(request, response){
+//   var archer= archery[randomInt(0, archery.length)];
+//   response.send(archer);
+// });
+// router.get('/basketball', function(request, response){
+//   var bballplayer= basketball[randomInt(0, basketball.length)];
+//   response.send(bballplayer);
+// });
+// router.get('/taekwondo', function(request, response){
+//   var taek= taekwondo[randomInt(0, taekwondo.length)];
+//   response.send(taek);
+// });
+// router.get('/tableTennis', function(request, response){
+//   var pingPongPlaya= tableTennis[randomInt(0, tableTennis.length)];
+//   response.send(pingPongPlaya);
+// });
+// router.get('/pentathlon', function(request, response){
+//   var penta= pentathlon[randomInt(0, pentathlon.length)];
+//   response.send(penta);
+// });
+
+router.get('/finalAthletes', function(request, response){
   var penta= pentathlon[randomInt(0, pentathlon.length)];
-  response.send(penta);
-});
+  var pingPongPlaya= tableTennis[randomInt(0, tableTennis.length)];
+  var taek= taekwondo[randomInt(0, taekwondo.length)];
+  var bballplayer= basketball[randomInt(0, basketball.length)];
+  var archer= archery[randomInt(0, archery.length)];
+
+  var final = {archery: archer,
+              basketball: bballplayer,
+              taekwondo: taek,
+              tableTennis: pingPongPlaya,
+              pentathlon: penta
+            };
+  response.send(final);
+})
 module.exports = router;
